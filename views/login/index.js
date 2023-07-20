@@ -13,7 +13,7 @@ confirmarUser(user,password)
 
 async function confirmarUser(correo,password) {
     
-    const url = `http://localhost:3000/api/users/${correo}/${password}`; 
+    const url = `/api/users/${correo}/${password}`; 
     try {
       const response = await fetch(url);
       const data = await response.json();

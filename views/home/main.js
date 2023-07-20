@@ -1,6 +1,6 @@
 
 let productos = [];
-const url = "http://localhost:3000/products"
+const url = "/products"
 
 fetch(url)
     .then(response => response.json())
