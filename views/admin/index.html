@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+
+      
+</head>
+<body>
+<div class="wrapper">
+    <header class="header-mobile">
+        <h1 class="logo">DressMEN</h1>
+        <h2 class="logo"><img src="/img/logo dressmen.jpg" alt=""></h2>
+        <button class="open-menu" id="open-menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </header>
+    <aside>
+        <button class="close-menu" id="close-menu">
+            <i class="bi bi-x"></i>
+        </button>
+        <header>
+            <h1 class="logo">DressMEN</h1>
+            <h2 class="logo"><img src="/img/logo dressmen.jpg" alt=""></h2>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
+                </li>
+                <li>
+                    <button id="mostrar-formulario" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb"></i> Agregar productos</button>
+                </li>
+                <li>
+                    <button id="mostrar-ordenes" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb"></i> Ver Ordenes</button>
+                </li>
+                
+                <li>
+                    <a class="boton-menu boton-carrito" href="/">
+                        <i class="bi bi-hand-index-thumb"></i> Home 
+                    </a>
+                </li>
+                
+
+            </ul>
+        </nav>
+        <footer>
+            <p class="texto-footer">© DressMen 2023</p>
+        </footer>
+    </aside><!-- Final aside -->
+
+    <main>
+        <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+
+        <div class="contenedor-productos" id="product-list">
+            
+            <form id="update-form" class="producto-detalles" style="display: none;" onsubmit="submitUpdateForm(event)">
+                <input type="hidden" id="update-form-id">
+                <label for="update-form-titulo">Titulo:</label>
+                <input type="text" id="update-form-titulo">
+                <label for="update-form-imagen">Imagen:</label>
+                <input type="text" id="update-form-imagen">
+                <label for="update-form-categoria-nombre">Categoria Nombre:</label>
+                <input type="text" id="update-form-categoria-nombre">
+                <label for="update-form-categoria-id">Categoria ID:</label>
+                <input type="text" id="update-form-categoria-id">
+                <label for="update-form-precio">Precio:</label>
+                <input type="number" id="update-form-precio">
+                <button type="submit" class="producto-agregar">Actualizar</button>
+              </form>
+              
+              
+
+
+
+        </div>
+
+        <form id="update-form" style="display: none;" onsubmit="submitUpdateForm(event)">
+            <input type="hidden" id="update-form-id">
+            <label for="update-form-titulo">Titulo:</label>
+            <input type="text" id="update-form-titulo">
+            <label for="update-form-imagen">Imagen:</label>
+            <input type="text" id="update-form-imagen">
+            <label for="update-form-categoria-nombre">Categoria Nombre:</label>
+            <input type="text" id="update-form-categoria-nombre">
+            <label for="update-form-categoria-id">Categoria ID:</label>
+            <input type="text" id="update-form-categoria-id">
+            <label for="update-form-precio">Precio:</label>
+            <input type="number" id="update-form-precio">
+            <button type="submit">Actualizar</button>
+          </form>
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+    
+    <form id="update-form" style="display: none;" onsubmit="submitUpdateForm(event)">
+        <input type="hidden" id="update-form-id">
+        <label for="update-form-titulo">Titulo:</label>
+        <input type="text" id="update-form-titulo">
+        <label for="update-form-imagen">Imagen:</label>
+        <input type="text" id="update-form-imagen">
+        <label for="update-form-categoria-nombre">Categoria Nombre:</label>
+        <input type="text" id="update-form-categoria-nombre">
+        <label for="update-form-categoria-id">Categoria ID:</label>
+        <input type="text" id="update-form-categoria-id">
+        <label for="update-form-precio">Precio:</label>
+        <input type="number" id="update-form-precio">
+        <button type="submit">Actualizar</button>
+      </form>
+      
+      <!-- Product list -->
+ 
+    <div class="" ></div>
+    <div style="padding-top: 2rem;"> 
+        <form id="create-form" onsubmit="submitCreateForm(event)" style="background-color: #294158; display: none;" >
+            <label for="create-form-id" style="color:  #ececec; margin-top: 5px;">ID:</label>
+            <input type="text" id="create-form-id" class="producto-agregar">
+            <label for="create-form-titulo" style="color:  #ececec; margin-top: 5px;">Titulo:</label>
+            <input type="text" id="create-form-titulo" class="producto-agregar">
+            <label for="create-form-imagen" style="color:  #ececec; margin-top: 5px;">Imagen:</label>
+            <input type="file" id="create-form-imagen" style="display: none;" >
+            <button type="button" onclick="document.getElementById('create-form-imagen').click()" class="producto-agregar">Seleccionar archivo</button>
+            <div id="file-name"></div>
+            <label for="create-form-categoria-nombre" style="color:  #ececec; margin-top: 5px;">Categoria Nombre:</label>
+            <input type="text" id="create-form-categoria-nombre" class="producto-agregar">
+            <label for="create-form-categoria-id" style="color:  #ececec; margin-top: 5px;">Categoria ID:</label>
+            <input type="text" id="create-form-categoria-id" class="producto-agregar">
+            <label for="create-form-precio" style="color:  #ececec; margin-top: 5px;">Precio:</label>
+            <input type="number" id="create-form-precio" class="producto-agregar">
+            <button type="submit" class="producto-agregar" style="margin-top: 1rem; margin-bottom: 1rem;">Crear</button>
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div><!-- final div wrapper -->
+    
+
+
+
+    
+
+      
+      
+<script src="admin.js"></script>
+<script src="menu.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.getElementById('create-form-imagen').addEventListener('change', function() {
+      document.getElementById('file-name').innerHTML = this.files[0].name;
+  });
+</script>
+</body>
+</html>
